@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color: lightyellow;
+font-family: Helvetica;
+}
+
+#main {
+width: 60%;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+}
+
+label {
+width: 150px;
+display: inline-block;
+}
+
+button {
+display: block;
+margin-top: 20px;
+
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>Which Element Bender would you be in the World of Avatar?</h1><img src="avatar.png" width="500" height="125" class="center"></div>
+<form  id="form1">
+<p><b>Question 1</b> - Which element do you think you can control?</p>
+<label><input type="radio" name="element" id="water1" value="1" />Air because who wouldn't want to fly through skies and run really fast?<br><br></label>
+<label><input type="radio" name="element" id="earth1" value="2" />Water because it's likable and adaptable to life's challenges just like me.</label>
+<label><input type="radio" name="element" id="fire1" value="3" />Earth because I support everyone in my life and I'm the strongest person I know.<br></label>
+<label><input type="radio" name="element" id="air1" value="4" />Fire because it's flame-o-mazing my man. Let's turn up the heat!<br><br></label>
+<label><input type="radio" name="element" id="none1" value="5" />Hmm... I'm not too sure. They're all pretty cool elements to control.<br><br></label>
+
+<p><b>Question 2</b> - How would your friends describe you?</p>
+<label><input type="radio" name="friends" id="water2" value="1" />My friends tell me that I'm the older brother or sister they never had.<br><br></label>
+<label><input type="radio" name="friends" id="earth2" value="2" />My friends think that I'm a really fun person to be around.<br><br><br></label>
+<label><input type="radio" name="friends" id="fire2" value="3" />My friends say that I'm the most emotional and passionate person they know.</label>
+<label><input type="radio" name="friends" id="air2" value="4" />I've never asked my friends what they think about me and I can't speak for what they think about me.</label>
+<label><input type="radio" name="friends" id="none2" value="5" />I'm the most important guy that they know. They can't live without me in their life.</label>
+
+<p><b>Question 3</b> - What can you say is your best trait?</p>
+<label><input type="radio" name="trait" id="water3" value="1" />I’m a very loyal person. I care for my friends and family much more than they realize.<br><br></label>
+<label><input type="radio" name="trait" id="earth3" value="2" />I stand by my opinions and life choices. I get to decide who I am and what I want to do, nobody else.</label>
+<label><input type="radio" name="trait" id="fire3" value="3" />I will do anything it takes to get what needs to be done, even when everyone else would give up.<br><br></label>
+<label><input type="radio" name="trait" id="air3" value="4" />I am willing to sacrifice my personal needs in order to help everyone else out.<br><br></label>
+<label><input type="radio" name="trait" id="none3" value="5" />Obviously… I have lots of great traits. What can I say? People like me for who I am.<br><br></label>
+
+<p><b>Question 4</b> - What are your family values?</p>
+<label><input type="radio" name="family" id="water4" value="1" />Families are really important to me. I love my family with all my heart!<br><br><br><br><br><br><br></label>
+<label><input type="radio" name="family" id="earth4" value="2" />A family is one that accepts you unconditionally. They don’t control who you are or what you do. They show unconditional support and understanding.<br><br></label>
+<label><input type="radio" name="family" id="fire4" value="3" />A family can be both good and evil to each person. It’s up to each family member to decide for themselves if they can be a healthy or a toxic presence to others in their lives.</label>
+<label><input type="radio" name="family" id="air4" value="4" />I’m not that attached to my family but I know that my family supports me as long as I do my best in life.<br><br><br><br></label>
+<label><input type="radio" name="family" id="none4" value="5" />I believe that families are important, but my personal experiences with my family doesn't define who I am.<br><br><br><br></label>
+
+<p><b>Question 5</b> - What is something you have the most difficulty accepting?</p>
+<label><input type="radio" name="difficulty" id="water5" value="1" />I can’t always help the people I love the most.<br><br><br></label>
+<label><input type="radio" name="difficulty" id="earth5" value="2" />Not many people like me. I try to say it doesn’t matter but I do want people to like me.</label>
+<label><input type="radio" name="difficulty" id="fire5" value="3" />I’m not good enough and that I always need to do more to keep up with everyone else.</label>
+<label><input type="radio" name="difficulty" id="air5" value="4" />That some people choose to be evil rather than to be good.<br><br></label>
+<label><input type="radio" name="difficulty" id="none5" value="5" />I can’t understand people who don’t eat meat. It’s so good!!!<br><br><br></label>
+
+<p><b>Question 6</b> - Do you think you could be the Avatar?</p>
+<label><input type="radio" name="avatar" id="no" value="0" />Yes</label>
+<label><input type="radio" name="avatar" id="yes" value="-22" />No</label>
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer2"></p>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+
+	  element = parseInt(document.querySelector('input[name = "element"]:checked').value);
+
+	  friends = parseInt(document.querySelector('input[name = "friends"]:checked').value);
+
+	  trait = parseInt(document.querySelector('input[name = "trait"]:checked').value);
+
+    family = parseInt(document.querySelector('input[name = "family"]:checked').value);
+
+    difficulty = parseInt(document.querySelector('input[name = "difficulty"]:checked').value);
+
+    avatar = parseInt(document.querySelector('input[name = "avatar"]:checked').value);
+
+	  total= element + friends + trait + family + difficulty + avatar;
+
+	  document.getElementById("answer").innerHTML = total;
+
+	   if(total < 1) {
+document.getElementById("answer2").innerHTML = "You would be the Avatar. You are a unique person, someone who exists once in a life time. You are a force of balance, someone who respects all cultures and all life. Many people look up to you for advice and wisdom. At times, you feel conflicted on the best course of action at times because sometimes you think that there really is no right answer. However, with the support of your friends and mentors, you make the right decisions.";
+}
+
+   if(total >= 5 && total < 14) {
+document.getElementById("answer2").innerHTML = "You would be a Water Bender. You are a very caring person, loving to your friends and family but fierce to your competitors and rivals. Like water itself, you have a very flexible outlook in life. You live with a sound state of mind but you are willing to change your outlooks of live when necessary. However, you don't forgive people easily and you believe everyone should be held accountable for past mistakes.";
+}
+
+	if(total >=8 && total < 17) {
+document.getElementById("answer2").innerHTML = "You would be an Earth Bender. You are a very independent person. You hold onto your personal beliefs due to personal hardships. You like to help other people out, but you don't believe in compassion or soft love. You personally believe that each person fights for their own selves, and to do well in life is to succeed by yourself. However, your closest friends get to see you for who you really are and are there to support you at your worst.";
+}
+
+if (total >= 11 && total < 20) {
+  document.getElementById("answer2").innerHTML = "You would be a Fire Bender. You are a very passionate individual, albiet misunderstood at times. Many people see you as too intimidating at times because of you act first and you act fast. Deep down inside, you want nothing more than peace to everybody on Earth. But your life has shown you multiple times that is not always the case."
+}
+
+if (total >= 14 && total < 23) {
+  document.getElementById("answer2").innerHTML = "You would be an Air Bender. You are a very reserved person. You don't have many personal attachments in life, knowing that life is finite. But you make the most out of your life by seeking a inner-peace and spreading kindness to one another. You want to learn as much as life as possible, making you quite well researched compared to other people you know. You don't like confronting other people unless you have to."
+}
+
+if (total >= 15 & total < 26) {
+  document.getElementById("answer2").innerHTML = "You are a non-bender. You have too many different opinions, and that's okay. It gives you an advantage over elemental benders because you can consider problems from a different point of view. While you are not the Avatar, you can make up in it with any tools and tricks you might have on your sleeve."
+}
+
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
